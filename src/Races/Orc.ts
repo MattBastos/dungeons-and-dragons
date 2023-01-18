@@ -1,7 +1,15 @@
 import Race from './Race';
 
-class Orc extends Race {
+export default class Orc extends Race {
+  constructor(
+    name: string,
+    dexterity: number,
+    private _maxLifePoints: number = 74,
+  ) {
+    super(name, dexterity);
+  }
 
+  public get maxLifePoints(): number {
+    return this.maxLifePoints;
+  }
 }
-
-export default Orc;
