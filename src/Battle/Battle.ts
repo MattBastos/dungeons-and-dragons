@@ -9,6 +9,4 @@
 //   }
 // }
 
-// Commit
-
 // export default Battle;
