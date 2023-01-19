@@ -27,4 +27,35 @@ export default class Character implements Fighter {
       amount: getRandomInt(1, 10),
     };
   }
+
+  public get race(): Race {
+    return this._race;
+  }
+
+  public get archetype(): Archetype {
+    return this._archetype;
+  }
+
+  public get lifePoints(): number {
+    return this._lifePoints;
+  }
+
+  public get strength(): number {
+    return this._strength;
+  }
+
+  public get defense(): number {
+    return this._defense;
+  }
+
+  public get dexterity(): number {
+    return this._dexterity;
+  }
+
+  public get energy(): Energy {
+    return {
+      type_: this._energy.type_,
+      amount: this._energy.amount,
+    };
+  }
 }
