@@ -6,11 +6,9 @@ export default class Warrior extends Archetype {
 
   constructor(
     name: string,
-    special: number,
-    cost: number,
     private _energyType: EnergyType = 'stamina',
   ) {
-    super(name, special, cost);
+    super(name);
   }
 
   public get energyType(): EnergyType {

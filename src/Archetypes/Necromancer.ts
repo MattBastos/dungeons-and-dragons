@@ -6,11 +6,9 @@ export default class Necromancer extends Archetype {
 
   constructor(
     name: string,
-    special: number,
-    cost: number,
     private _energyType: EnergyType = 'mana',
   ) {
-    super(name, special, cost);
+    super(name);
   }
 
   public get energyType(): EnergyType {
