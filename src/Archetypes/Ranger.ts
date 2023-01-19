@@ -8,13 +8,13 @@ export default class Ranger extends Archetype {
     name: string,
     special: number,
     cost: number,
-    private _stamina: EnergyType,
+    private _energyType: EnergyType = 'stamina',
   ) {
     super(name, special, cost);
   }
 
   public get energyType(): EnergyType {
-    return this._stamina;
+    return this._energyType;
   }
 
   public static createdArchetypeInstances(): number {
