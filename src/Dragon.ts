@@ -1,10 +1,13 @@
+import Monster from './Monster';
 import { SimpleFighter } from './Fighter';
 
-export default class Monster implements SimpleFighter {
+export default class Dragon extends Monster {
   constructor(
-    protected _lifePoints = 85,
-    protected _strength = 63,
-  ) { }
+    protected _lifePoints: number = 999,
+    protected _strength: number,
+  ) {
+    super(_lifePoints, _strength);
+  }
 
   public get lifePoints(): number {
     return this._lifePoints;
