@@ -8,12 +8,14 @@ export default class PVP extends Battle {
     private _player2: Character | Fighter,
   ) {
     super(_player1);
-    super.fight();
   }
 
   public fight(): number {
-    this._player1.attack(this._player2);
-    this._player2.attack(this._player1);
+    while (this._player1.lifePoints > 0 && this._player2.lifePoints > 0) {
+      this._player1.attack(this._player2);
+      this._player2.attack(this._player1);
+    }
+    
     return this._player1.lifePoints === -1 ? -1 : 1;
   }
 }

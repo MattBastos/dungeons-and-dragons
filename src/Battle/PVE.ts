@@ -9,12 +9,16 @@ export default class PVE extends Battle {
     private _monster: Monster[] | Fighter[] | SimpleFighter[],
   ) {
     super(_player);
-    super.fight();
   }
 
   public fight(): number {
-    this._monster.forEach((monster) => this.player.attack(monster));
-    this._monster.forEach((monster) => monster.attack(this._player));
+    this._monster.forEach((monster) => {
+      while (this._player.lifePoints > 0 && monster.lifePoints > 0) {
+        this._player.attack(monster);
+        monster.attack(this._player);
+      }
+    });
+    
     return this.player.lifePoints === -1 ? -1 : 1;
   }
 }
